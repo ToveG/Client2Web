@@ -8,17 +8,22 @@ namespace Client2Web
 {
     class HandelUserInput : IWeb2Client
     {
-        public void respondToUserInput1()
+        public void respondToUserInput01()
         {
             Console.WriteLine("Kul att du valde nummer 1");
+            Console.ReadKey();
         }
-        public void respondToUserInput2()
+        public void respondToUserInput02()
         {
             Console.WriteLine("Yes nr2.");
         }
-        public void respondToUserInput3()
+        public void respondToUserInput03()
         {
-            Console.WriteLine("Number 3 it is.");
+            Console.WriteLine("3-it´s a magic number.");
+        }
+        public void respondToUserInput04()
+        {
+            Console.WriteLine("Number 4 it is");
         }
     }
 }

@@ -8,8 +8,9 @@ namespace Client2Web
 {
     interface IWeb2Client
     {
-        void respondToUserInput1();
-        void respondToUserInput2();
-        void respondToUserInput3();
+        void respondToUserInput01();
+        void respondToUserInput02();
+        void respondToUserInput03();
+        void respondToUserInput04();
     }
 }

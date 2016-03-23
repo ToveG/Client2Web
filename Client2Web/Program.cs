@@ -10,36 +10,79 @@ namespace Client2Web
     {
         static void Main(string[] args)
         {
-            HandelUserInput handleInput = new HandelUserInput();
 
-            string userInput = "0";
-            Console.WriteLine("Hej och välkommen.");
-            Console.WriteLine("Vill du avsluta applikationen vänligen tryck 4.");
-
-            while (userInput != "4")
+            HandelUserInput h = new HandelUserInput();
+            foreach (string s in args)
             {
-                Console.WriteLine("Välj ett av följande val: 1, 2 eller 3.");
-
-                userInput = Console.ReadLine();
-
-                if (userInput == "1")
+                if (s == "client2web:01")
                 {
-                    handleInput.respondToUserInput1();
+                    h.respondToUserInput01();
                 }
-                else if (userInput == "2")
+                else if (s == "client2web:02")
                 {
-                    handleInput.respondToUserInput2();
+                    h.respondToUserInput02();
                 }
-                else if (userInput == "3")
+                else if (s == "client2web:03")
                 {
-                    handleInput.respondToUserInput3();
+                    h.respondToUserInput03();
+                }
+                else if (s == "client2web:04")
+                {
+                    h.respondToUserInput04();
                 }
 
-                else {
-                    Console.WriteLine("Du har gjort ett felaktigt val.");
-                }
-
+                Console.ReadKey();
             }
+
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //HandelUserInput handleInput = new HandelUserInput();
+
+        //string userInput = "0";
+        //Console.WriteLine("Välkommern till Client2Web.");
+        //Console.WriteLine("Vill du avsluta applikationen vänligen tryck 5.\n");
+
+
+        //while (userInput != "5")
+        //{
+        //    Console.WriteLine("Välj ett av följande val: 1, 2 eller 3.");
+
+        //    userInput = Console.ReadLine();
+
+        //    if (userInput == "1")
+        //    {
+        //        handleInput.respondToUserInput1();
+        //    }
+        //    else if (userInput == "2")
+        //    {
+        //        handleInput.respondToUserInput2();
+        //    }
+        //    else if (userInput == "3")
+        //    {
+        //        handleInput.respondToUserInput3();
+        //    }
+
+        //    else {
+        //        Console.WriteLine("Du har gjort ett felaktigt val.");
+        //    }
+
+        //}
     }
-}
+    }
+
