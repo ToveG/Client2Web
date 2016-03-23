@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,7 +12,6 @@ namespace Client2Web
         public void respondToUserInput01()
         {
             Console.WriteLine("Kul att du valde nummer 1");
-            Console.ReadKey();
         }
         public void respondToUserInput02()
         {
@@ -25,5 +25,13 @@ namespace Client2Web
         {
             Console.WriteLine("Number 4 it is");
         }
+
+        public void getAssemblyVersion()
+        {
+            string assemblyVersion = Assembly.GetExecutingAssembly().GetName().Version.ToString();
+            Console.WriteLine("Använder just nu version: " + assemblyVersion);
+
+        }
+
     }
 }

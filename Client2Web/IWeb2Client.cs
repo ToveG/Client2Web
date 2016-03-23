@@ -12,5 +12,6 @@ namespace Client2Web
         void respondToUserInput02();
         void respondToUserInput03();
         void respondToUserInput04();
+        void getAssemblyVersion();
     }
 }
