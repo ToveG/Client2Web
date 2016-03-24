@@ -30,8 +30,11 @@ namespace Client2Web
         {
             string assemblyVersion = Assembly.GetExecutingAssembly().GetName().Version.ToString();
             Console.WriteLine("Använder just nu version: " + assemblyVersion);
+            
+            //i dagsläget vet jag inte hur jag ska få ut den här informationen till websidan... 
+            //return assemblyVersion;
 
         }
 
-    }
+     }
 }

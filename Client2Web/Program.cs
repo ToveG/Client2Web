@@ -15,7 +15,6 @@ namespace Client2Web
 
             HandelUserInput h = new HandelUserInput();
             foreach (string s in args)
-    
             {
                 if (s == "client2web:01")
                 {
@@ -36,12 +35,15 @@ namespace Client2Web
                 else if (s == "client2web:05")
                 {
                     h.getAssemblyVersion();
+        
                 }
 
                 Console.ReadKey();
             }
 
-        }
+
+    }
+
 
 
     }
