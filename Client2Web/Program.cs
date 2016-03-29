@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Client2Web.Web2ClientServiceReferences;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+
 
 namespace Client2Web
 {
@@ -35,7 +37,12 @@ namespace Client2Web
                 else if (s == "client2web:05")
                 {
                     h.getAssemblyVersion();
-        
+
+                 
+
+              //      Web2ClientServiceReferences.w2cServiceSoapClient client = new Web2ClientServiceReferences.w2cServiceSoapClient();
+              //      client.HelloWorld()
+
                 }
 
                 Console.ReadKey();
