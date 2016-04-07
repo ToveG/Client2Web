@@ -4,11 +4,17 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
+
+
+
 
 namespace Client2Web
 {
     class HandelUserInput : IWeb2Client
     {
+        public object ApplicationDeployment { get; private set; }
+
         public void respondToUserInput01()
         {
             Console.WriteLine("Kul att du valde nummer 1");
@@ -28,13 +34,16 @@ namespace Client2Web
 
         public void getAssemblyVersion()
         {
-            string assemblyVersion = Assembly.GetExecutingAssembly().GetName().Version.ToString();
-            Console.WriteLine("Du använder just nu version: " + assemblyVersion);
-            
-            //i dagsläget vet jag inte hur jag ska få ut den här informationen till websidan... 
-            //return assemblyVersion;
+            //string assemblyVersion = Assembly.GetExecutingAssembly().GetName().Version.ToString();
 
+
+
+            Console.WriteLine("Hej jag kommer hit");
         }
 
-     }
+
+    }
+
 }
+
+

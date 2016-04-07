@@ -1,4 +1,5 @@
 ﻿using Client2Web.Web2ClientServiceReferences;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +15,12 @@ namespace Client2Web
        
         static void Main(string[] args)
         {
+            Console.ReadKey();
 
+            RegKeyHandler regKey = new RegKeyHandler();
+            //Create a registrykey when opening program 
+            regKey.createNewRegistryKey();
+        
             HandelUserInput h = new HandelUserInput();
             foreach (string s in args)
             {
