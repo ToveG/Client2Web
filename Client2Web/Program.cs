@@ -18,8 +18,21 @@ namespace Client2Web
             Console.ReadKey();
 
             RegKeyHandler regKey = new RegKeyHandler();
-            //Create a registrykey when opening program 
-            regKey.createNewRegistryKey();
+
+            string keyName = @"HKEY_CLASSES_ROOT\client2web";
+            string valueName = "URL Protocol";
+            if (Registry.GetValue(keyName, valueName, null) == null)
+            {
+                regKey.createNewRegistryKey();
+            }
+            else
+            {
+                Console.WriteLine("Du har redan rätt registernyckel.");
+                Console.ReadKey();
+            }
+
+
+           
         
             HandelUserInput h = new HandelUserInput();
             foreach (string s in args)

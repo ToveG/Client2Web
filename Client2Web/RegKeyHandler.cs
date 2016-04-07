@@ -9,25 +9,6 @@ namespace Client2Web
 {
     class RegKeyHandler
     {
-        public RegistryKey createKey(string keyValue)
-        {
-            RegistryKey keyName = Registry.ClassesRoot.CreateSubKey(keyValue);
-
-            return keyName;
-        }
-
-
-        public void addValueToKey(RegistryKey keyName, string value1, string value2)
-        {
-            keyName.SetValue(value1, value2, RegistryValueKind.String);
-        }
-
-        public void openKey(RegistryKey keyName, string valueOfKey)
-        {
-            keyName.OpenSubKey(valueOfKey, true);
-        }
-
-
         public void createNewRegistryKey()
         {
             RegistryKey mainKey = createKey("client2web");
@@ -55,6 +36,26 @@ namespace Client2Web
             CommandKey.Close();
 
         }
+        public RegistryKey createKey(string keyValue)
+        {
+            RegistryKey keyName = Registry.ClassesRoot.CreateSubKey(keyValue);
+
+            return keyName;
+        }
+
+
+        public void addValueToKey(RegistryKey keyName, string value1, string value2)
+        {
+            keyName.SetValue(value1, value2, RegistryValueKind.String);
+        }
+
+        public void openKey(RegistryKey keyName, string valueOfKey)
+        {
+            keyName.OpenSubKey(valueOfKey, true);
+        }
+
+
+       
 
     }
 }
