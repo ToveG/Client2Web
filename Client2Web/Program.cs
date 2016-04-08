@@ -24,16 +24,12 @@ namespace Client2Web
             if (Registry.GetValue(keyName, valueName, null) == null)
             {
                 regKey.createNewRegistryKey();
-            }
-            else
-            {
-                Console.WriteLine("Du har redan rätt registernyckel.");
-                Console.ReadKey();
-            }
-
-
-           
+            }                                   
         
+
+
+
+
             HandelUserInput h = new HandelUserInput();
             foreach (string s in args)
             {
@@ -56,8 +52,6 @@ namespace Client2Web
                 else if (s == "client2web:05")
                 {
                     h.getAssemblyVersion();
-
-                 
 
               //      Web2ClientServiceReferences.w2cServiceSoapClient client = new Web2ClientServiceReferences.w2cServiceSoapClient();
               //      client.HelloWorld()
