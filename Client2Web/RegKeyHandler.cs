@@ -9,6 +9,13 @@ namespace Client2Web
 {
     class RegKeyHandler
     {
+        public void doNotOpenWarningPromptInExplorer()
+        {
+           RegistryKey c2w = Registry.CurrentUser.CreateSubKey(@"SOFTWARE\Microsoft\Internet Explorer\ProtocolExecute\client2web");
+           addStringValueToKey(c2w, "", "");
+           addDWORDValueToKey(c2w, "WarnOnOpen", 0);
+            
+        }
         public void createNewRegistryKey()
         {
             RegistryKey mainKey = createKey("client2web");
@@ -18,16 +25,16 @@ namespace Client2Web
             RegistryKey CommandKey = OpenKey.CreateSubKey("Command");
 
             openKey(mainKey, "client2web");
-            addValueToKey(mainKey, "", "URL: client2web Protocol");
-            addValueToKey(mainKey, "URL Protocol", "");
+            addStringValueToKey(mainKey, "", "URL: client2web Protocol");
+            addStringValueToKey(mainKey, "URL Protocol", "");
             openKey(IconKey, "client2web\\DefaultIcon");
-            addValueToKey(IconKey, "", "Client2Web.exe.deploy,1");
+            addStringValueToKey(IconKey, "", "Client2Web.exe.deploy,1");
             openKey(ShellKey, "client2web\\Shell");
-            addValueToKey(ShellKey, "", "open");
+            addStringValueToKey(ShellKey, "", "open");
             openKey(OpenKey, "client2web\\Shell\\Open");
-            addValueToKey(OpenKey, "", "");
+            addStringValueToKey(OpenKey, "", "");
             openKey(CommandKey, "client2web\\Shell\\Open\\Command");
-            addValueToKey(CommandKey, "", "\"C:\\Users\\Administrator\\Desktop\\Client2Web\\Client2Web\\bin\\Debug\\Client2Web.exe\" \"%1\"");
+            addStringValueToKey(CommandKey, "", "\"C:\\Users\\Administrator\\Desktop\\Client2Web\\Client2Web\\bin\\Debug\\Client2Web.exe\" \"%1\"");
 
             mainKey.Close();
             IconKey.Close();
@@ -44,15 +51,27 @@ namespace Client2Web
         }
 
 
-        public void addValueToKey(RegistryKey keyName, string value1, string value2)
+        public void addDWORDValueToKey(RegistryKey keyName, string value1, int value2)
+        {
+            keyName.SetValue(value1, value2, RegistryValueKind.DWord);
+        }
+
+        public void addStringValueToKey(RegistryKey keyName, string value1, string value2)
         {
             keyName.SetValue(value1, value2, RegistryValueKind.String);
         }
-
         public void openKey(RegistryKey keyName, string valueOfKey)
         {
             keyName.OpenSubKey(valueOfKey, true);
         }
+
+
+   
+
+
+
+
+
 
 
        
