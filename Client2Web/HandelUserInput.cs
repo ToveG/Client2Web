@@ -22,6 +22,7 @@ namespace Client2Web
         }
         public void respondToUserInput02()
         {
+            Console.WriteLine("Number 2.");
         }
         public void respondToUserInput03()
         {
