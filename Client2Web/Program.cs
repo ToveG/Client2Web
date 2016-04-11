@@ -15,7 +15,6 @@ namespace Client2Web
        
         static void Main(string[] args)
         {
-            Console.ReadKey();
 
             RegKeyHandler regKey = new RegKeyHandler();
 
@@ -24,8 +23,8 @@ namespace Client2Web
             if (Registry.GetValue(keyName, valueName, null) == null)
             {
                 regKey.createNewRegistryKey();
-            }                                   
-        
+            }
+
 
 
 

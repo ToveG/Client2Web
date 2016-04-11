@@ -27,7 +27,7 @@ namespace Client2Web
             openKey(OpenKey, "client2web\\Shell\\Open");
             addValueToKey(OpenKey, "", "");
             openKey(CommandKey, "client2web\\Shell\\Open\\Command");
-            addValueToKey(CommandKey, "", "\"C:\\Users\\Administrator\\Source\\Client2Web Project\\Client2Web\\Client2Web\\bin\\Debug\\Client2Web.exe\" \"%1\"");
+            addValueToKey(CommandKey, "", "\"C:\\Users\\Administrator\\Desktop\\Client2Web\\Client2Web\\bin\\Debug\\Client2Web.exe\" \"%1\"");
 
             mainKey.Close();
             IconKey.Close();
