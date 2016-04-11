@@ -12,24 +12,18 @@ namespace Client2Web
 {
     class Program
     {
-       
         static void Main(string[] args)
         {
-            Console.ReadKey();
-
             RegKeyHandler regKey = new RegKeyHandler();
             regKey.doNotOpenWarningPromptInExplorer();
+
             string keyName = @"HKEY_CLASSES_ROOT\client2web";
             string valueName = "URL Protocol";
             if (Registry.GetValue(keyName, valueName, null) == null)
             {
                 regKey.createNewRegistryKey();
             }
-
-
-
-
-
+            
             HandelUserInput h = new HandelUserInput();
             foreach (string s in args)
             {
