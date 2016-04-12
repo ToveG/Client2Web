@@ -6,7 +6,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using static System.Net.Mime.MediaTypeNames;
-
+using System.Windows.Forms;
 
 
 
@@ -17,10 +17,10 @@ namespace Client2Web
     class HandelUserInput : IWeb2Client
     {
         public object ApplicationDeployment { get; private set; }
-        public object MessageBox { get; private set; }
 
         public void respondToUserInput01()
-        {   
+        {
+            
            
             Console.WriteLine("Kul att du valde nr1");
         }
