@@ -18,13 +18,6 @@ namespace Client2Web
             return fullPath;
         }
 
-        //string fileName = "Client2Web.exe";
-        //string fullPath;
-
-        //fullPath = Path.GetFullPath(fileName);
-        //    Console.WriteLine("GetFullPath('{0}') returns '{1}'",
-        //    fileName, fullPath);
-
         
     }
 }

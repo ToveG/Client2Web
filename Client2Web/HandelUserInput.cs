@@ -10,18 +10,23 @@ using static System.Net.Mime.MediaTypeNames;
 
 
 
+
+
 namespace Client2Web
 {
     class HandelUserInput : IWeb2Client
     {
         public object ApplicationDeployment { get; private set; }
+        public object MessageBox { get; private set; }
 
         public void respondToUserInput01()
-        {
+        {   
+           
             Console.WriteLine("Kul att du valde nr1");
         }
         public void respondToUserInput02()
         {
+            Console.WriteLine("Det här fungerade ju bra");
             Console.WriteLine("Number 2.");
         }
         public void respondToUserInput03()
