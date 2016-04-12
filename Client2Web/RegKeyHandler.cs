@@ -16,7 +16,7 @@ namespace Client2Web
            addDWORDValueToKey(c2w, "WarnOnOpen", 0);
             
         }
-        public void createNewRegistryKey()
+        public void createNewRegistryKey(string path)
         {
             RegistryKey mainKey = createKey("client2web");
             RegistryKey IconKey = mainKey.CreateSubKey("DefaultIcon");
@@ -34,7 +34,7 @@ namespace Client2Web
             openKey(OpenKey, "client2web\\Shell\\Open");
             addStringValueToKey(OpenKey, "", "");
             openKey(CommandKey, "client2web\\Shell\\Open\\Command");
-            addStringValueToKey(CommandKey, "", "\"C:\\Users\\Administrator\\Desktop\\Client2Web\\Client2Web\\bin\\Debug\\Client2Web.exe\" \"%1\"");
+            addStringValueToKey(CommandKey, "","\"" + path + "\" \"" + "%1\"" );
 
             mainKey.Close();
             IconKey.Close();

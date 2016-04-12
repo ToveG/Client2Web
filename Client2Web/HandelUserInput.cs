@@ -18,7 +18,7 @@ namespace Client2Web
 
         public void respondToUserInput01()
         {
-            Console.WriteLine("Kul att du valde nummer 1");
+            Console.WriteLine("Kul att du valde nr1");
         }
         public void respondToUserInput02()
         {

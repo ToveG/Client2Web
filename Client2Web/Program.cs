@@ -2,6 +2,7 @@
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -15,15 +16,23 @@ namespace Client2Web
         static void Main(string[] args)
         {
             RegKeyHandler regKey = new RegKeyHandler();
+            myAppPath appPath = new myAppPath();
+
+            //Set the registrykey so that the warning prompt do not show in ie. 
             regKey.doNotOpenWarningPromptInExplorer();
 
+            string fullPath = appPath.GetFullPathForApp();
+
+            //checks if the registrykey for protocol exists. 
+            //if not, it will create a new one
             string keyName = @"HKEY_CLASSES_ROOT\client2web";
             string valueName = "URL Protocol";
             if (Registry.GetValue(keyName, valueName, null) == null)
             {
-                regKey.createNewRegistryKey();
+                regKey.createNewRegistryKey(fullPath);
             }
             
+            //handels the user inputs from web2client. 
             HandelUserInput h = new HandelUserInput();
             foreach (string s in args)
             {
@@ -47,8 +56,7 @@ namespace Client2Web
                 {
                     h.getAssemblyVersion();
 
-              //      Web2ClientServiceReferences.w2cServiceSoapClient client = new Web2ClientServiceReferences.w2cServiceSoapClient();
-              //      client.HelloWorld()
+         
 
                 }
 
@@ -57,7 +65,8 @@ namespace Client2Web
 
 
     }
-
+        //      Web2ClientServiceReferences.w2cServiceSoapClient client = new Web2ClientServiceReferences.w2cServiceSoapClient();
+        //      client.HelloWorld()
 
 
     }
