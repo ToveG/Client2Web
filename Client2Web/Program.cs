@@ -9,22 +9,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Client2Web
 {
     class Program
     {
-        static void Main(string[] args)
+          static void Main(string[] args)
         {
-
-            RegKeyHandler regKey = new RegKeyHandler();
-            myAppPath appPath = new myAppPath();
-
-            string fullPath = appPath.GetFullPathForApp();
-
-            regKey.createNewRegistryKey(fullPath);
-            regKey.disableProtocolPrompt();
-                     
-         
+    
             //handels the user inputs from web2client. 
             HandelUserInput h = new HandelUserInput();
             foreach (string s in args)
@@ -51,9 +43,9 @@ namespace Client2Web
                 }
                 else
                 {
-
+                   
                 }
-                Console.ReadKey();
+
             }
 
 

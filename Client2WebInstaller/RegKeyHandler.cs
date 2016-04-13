@@ -4,12 +4,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
-namespace Client2Web
+namespace Client2WebInstaller
 {
     class RegKeyHandler
     {
-        public string  keyName { get; set; }
+        public string keyName { get; set; }
         public string valueName { get; set; }
         public string value { get; set; }
         public bool true_or_false { get; set; }
@@ -61,31 +62,32 @@ namespace Client2Web
 
         public void createNewRegistryKey(string path)
         {
-            doItExists= doRegKeyExist();
-            if(doItExists == false) { 
-            RegistryKey mainKey = createKey("client2web");
-            RegistryKey IconKey = mainKey.CreateSubKey("DefaultIcon");
-            RegistryKey ShellKey = mainKey.CreateSubKey("Shell");
-            RegistryKey OpenKey = ShellKey.CreateSubKey("Open");
-            RegistryKey CommandKey = OpenKey.CreateSubKey("Command");
+            doItExists = doRegKeyExist();
+            if (doItExists == false)
+            {
+                RegistryKey mainKey = createKey("client2web");
+                RegistryKey IconKey = mainKey.CreateSubKey("DefaultIcon");
+                RegistryKey ShellKey = mainKey.CreateSubKey("Shell");
+                RegistryKey OpenKey = ShellKey.CreateSubKey("Open");
+                RegistryKey CommandKey = OpenKey.CreateSubKey("Command");
 
-            openKey(mainKey, "client2web");
-            addStringValueToKey(mainKey, "", "URL: client2web Protocol");
-            addStringValueToKey(mainKey, "URL Protocol", "");
-            openKey(IconKey, "client2web\\DefaultIcon");
-            addStringValueToKey(IconKey, "", "Client2Web.exe.deploy,1");
-            openKey(ShellKey, "client2web\\Shell");
-            addStringValueToKey(ShellKey, "", "open");
-            openKey(OpenKey, "client2web\\Shell\\Open");
-            addStringValueToKey(OpenKey, "", "");
-            openKey(CommandKey, "client2web\\Shell\\Open\\Command");
-            addStringValueToKey(CommandKey, "", "\"" + path + "\" \"" + "%1\"");
+                openKey(mainKey, "client2web");
+                addStringValueToKey(mainKey, "", "URL: client2web Protocol");
+                addStringValueToKey(mainKey, "URL Protocol", "");
+                openKey(IconKey, "client2web\\DefaultIcon");
+                addStringValueToKey(IconKey, "", "Client2Web.exe.deploy,1");
+                openKey(ShellKey, "client2web\\Shell");
+                addStringValueToKey(ShellKey, "", "open");
+                openKey(OpenKey, "client2web\\Shell\\Open");
+                addStringValueToKey(OpenKey, "", "");
+                openKey(CommandKey, "client2web\\Shell\\Open\\Command");
+                addStringValueToKey(CommandKey, "", "\"" + path + "\" \"" + "%1\"");
 
-            mainKey.Close();
-            IconKey.Close();
-            ShellKey.Close();
-            OpenKey.Close();
-            CommandKey.Close();
+                mainKey.Close();
+                IconKey.Close();
+                ShellKey.Close();
+                OpenKey.Close();
+                CommandKey.Close();
             }
             else { setCommandValue(path); }
         }
@@ -120,4 +122,3 @@ namespace Client2Web
         }
     }
 }
-

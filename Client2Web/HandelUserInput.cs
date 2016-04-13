@@ -21,27 +21,25 @@ namespace Client2Web
         public void respondToUserInput01()
         {
             
-           
-            Console.WriteLine("Kul att du valde nr1");
+        MessageBox.Show("Kul att du valde nr1");
         }
         public void respondToUserInput02()
         {
-            Console.WriteLine("Det här fungerade ju bra");
-            Console.WriteLine("Number 2.");
+            MessageBox.Show("Number 2.");
         }
         public void respondToUserInput03()
         {
-            Console.WriteLine("3-it´s a magic number.");
+            MessageBox.Show("3-it´s a magic number.");
         }
         public void respondToUserInput04()
         {
-            Console.WriteLine("Number 4 it is");
+            MessageBox.Show("Number 4 it is");
         }
 
         public void getAssemblyVersion()
         {
           string assemblyVersion = Assembly.GetExecutingAssembly().GetName().Version.ToString();
-            Console.WriteLine("Du använder version: " + assemblyVersion);
+            MessageBox.Show("Du använder version: " + assemblyVersion);
         }
             
 
