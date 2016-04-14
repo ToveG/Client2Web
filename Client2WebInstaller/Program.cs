@@ -12,7 +12,8 @@ namespace Client2WebInstaller
     {
         static void Main(string[] args)
         {
-
+      
+          
             RegKeyHandler regKey = new RegKeyHandler();
             myAppPath appPath = new myAppPath();
 

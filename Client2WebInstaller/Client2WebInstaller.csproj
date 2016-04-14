@@ -21,10 +21,11 @@
     <UpdateInterval>7</UpdateInterval>
     <UpdateIntervalUnits>Days</UpdateIntervalUnits>
     <UpdatePeriodically>false</UpdatePeriodically>
-    <UpdateRequired>false</UpdateRequired>
+    <UpdateRequired>true</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>http://localhost/Deploy/</InstallUrl>
-    <ApplicationRevision>25</ApplicationRevision>
+    <MinimumRequiredVersion>1.0.0.25</MinimumRequiredVersion>
+    <ApplicationRevision>35</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -83,7 +84,9 @@
     <Compile Include="RegKeyHandler.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Client2WebInstaller_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
@@ -120,5 +123,21 @@
   </Target>
   <Target Name="AfterBuild">
   </Target>
+ <Target Name="AutoSetMinimumRequiredVersion" BeforeTargets="GenerateDeploymentManifest">
+    <FormatVersion Version="$(ApplicationVersion)" Revision="$(ApplicationRevision)">
+      <Output PropertyName="MinimumRequiredVersion" TaskParameter="OutputVersion"  />
+    </FormatVersion>
+    <FormatVersion Version="$(ApplicationVersion)" Revision="$(ApplicationRevision)">
+      <Output PropertyName="_DeploymentBuiltMinimumRequiredVersion" TaskParameter="OutputVersion"  />
+    </FormatVersion>
+  </Target>
   -->
+  <Target Name="AutoSetMinimumRequiredVersion" BeforeTargets="GenerateDeploymentManifest">
+    <FormatVersion Version="$(ApplicationVersion)" Revision="$(ApplicationRevision)">
+      <Output PropertyName="MinimumRequiredVersion" TaskParameter="OutputVersion" />
+    </FormatVersion>
+    <FormatVersion Version="$(ApplicationVersion)" Revision="$(ApplicationRevision)">
+      <Output PropertyName="_DeploymentBuiltMinimumRequiredVersion" TaskParameter="OutputVersion" />
+    </FormatVersion>
+  </Target>
 </Project>

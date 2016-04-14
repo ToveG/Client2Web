@@ -20,8 +20,7 @@ namespace Client2Web
 
         public void respondToUserInput01()
         {
-            
-        MessageBox.Show("Kul att du valde nr1");
+        MessageBox.Show("Kul att du valde nr111");
         }
         public void respondToUserInput02()
         {
@@ -42,6 +41,10 @@ namespace Client2Web
             MessageBox.Show("Du använder version: " + assemblyVersion);
         }
             
+        public void goToApp()
+        {
+
+        }
 
     }
     

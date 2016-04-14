@@ -1,5 +1,4 @@
-﻿using Client2Web.Web2ClientServiceReferences;
-using Microsoft.Win32;
+﻿using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -8,7 +7,10 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Deployment;
+using System.Deployment.Application;
+using System.ComponentModel;
+using System.Data;
 
 namespace Client2Web
 {
@@ -16,7 +18,21 @@ namespace Client2Web
     {
           static void Main(string[] args)
         {
-    
+            //w2cservice.w2cService objservice = new w2cservice.w2cService();
+
+            //string word = "true";
+            //word = objservice.Hello(word);
+
+            //ApplicationDeployment updateCheck = ApplicationDeployment.CurrentDeployment;
+            //UpdateCheckInfo info = updateCheck.CheckForDetailedUpdate();
+
+            //if (info.UpdateAvailable)
+            //{
+            //    updateCheck.Update();
+            //    MessageBox.Show("uppdaterar");
+            //    Application.Restart();
+
+            //}
             //handels the user inputs from web2client. 
             HandelUserInput h = new HandelUserInput();
             foreach (string s in args)
@@ -41,9 +57,9 @@ namespace Client2Web
                 {
                     h.getAssemblyVersion();
                 }
-                else
+                else if (s == "client2web:06")
                 {
-                   
+                    h.goToApp();
                 }
 
             }
