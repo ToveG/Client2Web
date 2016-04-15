@@ -19,16 +19,7 @@ namespace Client2Web
           static void Main(string[] args)
         {
            
-            //ApplicationDeployment updateCheck = ApplicationDeployment.CurrentDeployment;
-            //UpdateCheckInfo info = updateCheck.CheckForDetailedUpdate();
-
-            //if (info.UpdateAvailable)
-            //{
-            //    updateCheck.Update();
-            //    MessageBox.Show("uppdaterar");
-            //    Application.Restart();
-
-            //}
+          
       
             HandelUserInput h = new HandelUserInput();
             foreach (string s in args)
