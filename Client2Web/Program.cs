@@ -11,6 +11,7 @@ using System.Deployment;
 using System.Deployment.Application;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 
 namespace Client2Web
 {
@@ -18,9 +19,10 @@ namespace Client2Web
     {
           static void Main(string[] args)
         {
-           
-          
-      
+            //myPath mp = new myPath();
+
+
+            MessageBox.Show("C2w");
             HandelUserInput h = new HandelUserInput();
             foreach (string s in args)
             {

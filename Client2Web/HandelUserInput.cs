@@ -9,9 +9,6 @@ using static System.Net.Mime.MediaTypeNames;
 using System.Windows.Forms;
 
 
-
-
-
 namespace Client2Web
 {
     class HandelUserInput : IWeb2Client
@@ -20,7 +17,7 @@ namespace Client2Web
 
         public void respondToUserInput01()
         {
-        MessageBox.Show("Kul att du valde nr1");
+        MessageBox.Show("Kul att du kämpar på iaf.");
         }
         public void respondToUserInput02()
         {
