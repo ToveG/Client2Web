@@ -18,11 +18,7 @@ namespace Client2Web
     {
           static void Main(string[] args)
         {
-            //w2cservice.w2cService objservice = new w2cservice.w2cService();
-
-            //string word = "true";
-            //word = objservice.Hello(word);
-
+           
             //ApplicationDeployment updateCheck = ApplicationDeployment.CurrentDeployment;
             //UpdateCheckInfo info = updateCheck.CheckForDetailedUpdate();
 
@@ -33,7 +29,7 @@ namespace Client2Web
             //    Application.Restart();
 
             //}
-            //handels the user inputs from web2client. 
+      
             HandelUserInput h = new HandelUserInput();
             foreach (string s in args)
             {
@@ -66,6 +62,11 @@ namespace Client2Web
 
 
     }
+        //w2cservice.w2cService objservice = new w2cservice.w2cService();
+
+        //string word = "true";
+        //word = objservice.Hello(word);
+
         //      Web2ClientServiceReferences.w2cServiceSoapClient client = new Web2ClientServiceReferences.w2cServiceSoapClient();
         //      client.HelloWorld()
 

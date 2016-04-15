@@ -12,8 +12,8 @@ namespace Client2WebInstaller
     {
         static void Main(string[] args)
         {
-      
-          
+
+
             RegKeyHandler regKey = new RegKeyHandler();
             myAppPath appPath = new myAppPath();
 
@@ -23,7 +23,6 @@ namespace Client2WebInstaller
             regKey.disableProtocolPrompt();
 
             MessageBox.Show("Din installation är nu klar.");
-           
         }
     }
 }
