@@ -19,12 +19,11 @@ namespace Client2Web
     {
           static void Main(string[] args)
         {
-            //myPath mp = new myPath();
+            //myPath mp = new myPath(); 
 
-
-            MessageBox.Show("C2w");
             HandelUserInput h = new HandelUserInput();
             foreach (string s in args)
+
             {
                 if (s == "client2web:01")
                 {

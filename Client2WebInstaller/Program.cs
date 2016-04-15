@@ -13,7 +13,7 @@ namespace Client2WebInstaller
         static void Main(string[] args)
         {
 
-            MessageBox.Show("C2wInstaller");
+   
             //ApplicationDeployment updateCheck = ApplicationDeployment.CurrentDeployment;
             //UpdateCheckInfo info = updateCheck.CheckForDetailedUpdate();
 

@@ -21,7 +21,7 @@ namespace Client2Web
         }
         public void respondToUserInput02()
         {
-            MessageBox.Show("Number 2.1");
+            MessageBox.Show("Nr 2");
         }
         public void respondToUserInput03()
         {
