@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Deployment.Application;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,7 +15,7 @@ namespace Client2WebInstaller
         static void Main(string[] args)
         {
 
-   
+
             //ApplicationDeployment updateCheck = ApplicationDeployment.CurrentDeployment;
             //UpdateCheckInfo info = updateCheck.CheckForDetailedUpdate();
 
@@ -27,12 +29,31 @@ namespace Client2WebInstaller
             RegKeyHandler regKey = new RegKeyHandler();
             myAppPath appPath = new myAppPath();
 
-            string fullPath = appPath.GetFullPathForApp();
+            string fullPath = Application.ExecutablePath;
 
             regKey.createNewRegistryKey(fullPath);
             regKey.disableProtocolPrompt();
 
-            MessageBox.Show("Din installation är nu klar.");
+            string shortcutName = string.Concat(Environment.GetFolderPath(Environment.SpecialFolder.Programs), "\\", "Formpipe AB", "\\", "PCF", ".appref-ms");
+            if (File.Exists(shortcutName))
+            {
+                string arguments = "";
+                foreach (var arg in args)
+                {
+                    arguments += arg + "&";
+                }
+
+                Process.Start(shortcutName, arguments);
+            }
+            else
+            {
+            
+                fullPath = Path.Combine(ApplicationDeployment.CurrentDeployment.DataDirectory, "Binaries", "setup.exe");
+
+                Process.Start(fullPath);
+            }
+
+            // MessageBox.Show("Din installation är nu klar.");
         }
     }
 }

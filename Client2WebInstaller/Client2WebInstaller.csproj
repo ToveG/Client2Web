@@ -24,8 +24,10 @@
     <UpdateRequired>true</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>http://localhost/Deploy/</InstallUrl>
+    <ProductName>PCFPasstrough</ProductName>
+    <PublisherName>Formpipe AB</PublisherName>
     <MinimumRequiredVersion>1.0.0.25</MinimumRequiredVersion>
-    <ApplicationRevision>57</ApplicationRevision>
+    <ApplicationRevision>76</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -101,11 +103,9 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Content Include="Binaries\Client2Web.exe" />
-  </ItemGroup>
-  <ItemGroup>
-    <PublishFile Include="Binaries\Client2Web.exe">
+    <PublishFile Include="Binaries\setup.exe">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -115,6 +115,9 @@
       <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Binaries\setup.exe" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

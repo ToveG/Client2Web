@@ -17,7 +17,7 @@ namespace Client2Web
 
         public void respondToUserInput01()
         {
-        MessageBox.Show("Kul att du kämpar på iaf.");
+        MessageBox.Show("Kul att du kässsmpar på iaf.");
         }
         public void respondToUserInput02()
         {

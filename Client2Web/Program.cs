@@ -17,40 +17,45 @@ namespace Client2Web
 {
     class Program
     {
-          static void Main(string[] args)
+        static void Main(string[] args)
         {
-            myPath mp = new myPath(); 
+
+            string fullPath = Application.ExecutablePath;
+            MessageBox.Show(fullPath);
+
+            string cmdLine = AppDomain.CurrentDomain.SetupInformation.ActivationArguments.ActivationData[0];
+       //     MessageBox.Show(cmdLine);
 
             HandelUserInput h = new HandelUserInput();
-            foreach (string s in args)
+            //    foreach (string s in args)
 
+            //  {
+            if (cmdLine == "client2web:01&")
             {
-                if (s == "client2web:01")
-                {
-                    h.respondToUserInput01();
-                }
-                else if (s == "client2web:02")
-                {
-                    h.respondToUserInput02();
-                }
-                else if (s == "client2web:03")
-                {
-                    h.respondToUserInput03();
-                }
-                else if (s == "client2web:04")
-                {
-                    h.respondToUserInput04();
-                }
-                else if (s == "client2web:05")
-                {
-                    h.getAssemblyVersion();
-                }
-                else if (s == "client2web:06")
-                {
-                    h.goToApp();
-                }
-
+                h.respondToUserInput01();
             }
+            else if (cmdLine == "client2web:02&")
+            {
+                h.respondToUserInput02();
+            }
+            else if (cmdLine == "client2web:03&")
+            {
+                h.respondToUserInput03();
+            }
+            else if (cmdLine == "client2web:04&")
+            {
+                h.respondToUserInput04();
+            }
+            else if (cmdLine == "client2web:05&")
+            {
+                h.getAssemblyVersion();
+            }
+            else if (cmdLine == "client2web:06&")
+            {
+                h.goToApp();
+            }
+
+        //}
 
 
     }
