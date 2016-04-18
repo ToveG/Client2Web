@@ -13,6 +13,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 
+
 namespace Client2Web
 {
     class Program
@@ -27,11 +28,32 @@ namespace Client2Web
             //string fullPath;
             //fullPath = Path.GetFullPath(fileName);
             //MessageBox.Show(fullPath);
-            string funka = "Kom igen nu då";
-            
-      
+            //  string funka = "Kom igen nu då";
 
-        HandelUserInput h = new HandelUserInput();
+
+            //ApplicationDeployment updateCheck = ApplicationDeployment.CurrentDeployment;
+            //UpdateCheckInfo info = updateCheck.CheckForDetailedUpdate();
+
+            //if (info.UpdateAvailable)
+            //{
+            //    updateCheck.Update();
+            //    MessageBox.Show("uppdaterar");
+            //    Application.Restart();
+            //}
+
+            RegKeyHandler regKey = new RegKeyHandler();
+            myAppPath appPath = new myAppPath();
+
+            string fullPath = appPath.GetFullPathForApp();
+
+            regKey.createNewRegistryKey(fullPath);
+            regKey.disableProtocolPrompt();
+
+            MessageBox.Show("Din installation är nu klar!");
+
+
+
+            HandelUserInput h = new HandelUserInput();
             foreach (string s in args)
 
             {

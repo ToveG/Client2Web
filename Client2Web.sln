@@ -5,8 +5,6 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client2Web", "Client2Web\Client2Web.csproj", "{98349080-DE73-4F4F-9B8E-1B2593F9C79B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client2WebInstaller", "Client2WebInstaller\Client2WebInstaller.csproj", "{5FBDEC7A-58D3-48E1-937C-CC23E3FA57BF}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,10 +15,6 @@ Global
 		{98349080-DE73-4F4F-9B8E-1B2593F9C79B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98349080-DE73-4F4F-9B8E-1B2593F9C79B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{98349080-DE73-4F4F-9B8E-1B2593F9C79B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5FBDEC7A-58D3-48E1-937C-CC23E3FA57BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5FBDEC7A-58D3-48E1-937C-CC23E3FA57BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5FBDEC7A-58D3-48E1-937C-CC23E3FA57BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5FBDEC7A-58D3-48E1-937C-CC23E3FA57BF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
