@@ -32,7 +32,9 @@ namespace Client2WebInstaller
             regKey.createNewRegistryKey(fullPath);
             regKey.disableProtocolPrompt();
 
-            MessageBox.Show("Din installation är nu klar.");
+            MessageBox.Show("Din installation är nu klar!");
+
+       
         }
     }
 }

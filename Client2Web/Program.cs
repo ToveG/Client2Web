@@ -19,9 +19,19 @@ namespace Client2Web
     {
           static void Main(string[] args)
         {
-            //myPath mp = new myPath(); 
+            //skulle den här koden fungera? 
+            //string fullPath = Application.ExecutablePath;
 
-            HandelUserInput h = new HandelUserInput();
+
+            //string fileName = "Client2Web";
+            //string fullPath;
+            //fullPath = Path.GetFullPath(fileName);
+            //MessageBox.Show(fullPath);
+            string funka = "Kom igen nu då";
+            
+      
+
+        HandelUserInput h = new HandelUserInput();
             foreach (string s in args)
 
             {
