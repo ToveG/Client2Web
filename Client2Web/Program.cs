@@ -19,7 +19,7 @@ namespace Client2Web
     {
           static void Main(string[] args)
         {
-            //myPath mp = new myPath(); 
+            myPath mp = new myPath(); 
 
             HandelUserInput h = new HandelUserInput();
             foreach (string s in args)
