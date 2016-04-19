@@ -15,17 +15,6 @@ namespace Client2WebInstaller
         static void Main(string[] args)
         {
 
-
-            //ApplicationDeployment updateCheck = ApplicationDeployment.CurrentDeployment;
-            //UpdateCheckInfo info = updateCheck.CheckForDetailedUpdate();
-
-            //if (info.UpdateAvailable)
-            //{
-            //    updateCheck.Update();
-            //    MessageBox.Show("uppdaterar");
-            //    Application.Restart();
-            //}
-
             RegKeyHandler regKey = new RegKeyHandler();
             myAppPath appPath = new myAppPath();
 

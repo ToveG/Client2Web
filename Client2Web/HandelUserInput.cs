@@ -17,15 +17,15 @@ namespace Client2Web
 
         public void respondToUserInput01()
         {
-        MessageBox.Show("Kul att du kässsmpar på iaf.");
+        MessageBox.Show("Number 1");
         }
         public void respondToUserInput02()
         {
-            MessageBox.Show("Nr 2");
+            MessageBox.Show("Btn nr 2");
         }
         public void respondToUserInput03()
         {
-            MessageBox.Show("3-it´s a magic number.");
+            MessageBox.Show("3-it´s a magic number!");
         }
         public void respondToUserInput04()
         {

@@ -20,11 +20,24 @@ namespace Client2Web
         static void Main(string[] args)
         {
 
-            string fullPath = Application.ExecutablePath;
-            MessageBox.Show(fullPath);
 
+            ApplicationDeployment updateCheck = ApplicationDeployment.CurrentDeployment;
+            UpdateCheckInfo info = updateCheck.CheckForDetailedUpdate();
+
+            if (info.UpdateAvailable)
+            {
+
+                updateCheck.Update();
+                MessageBox.Show("En ny version fanns tillgänglig och din applikation har nu uppdaterats");
+                return;
+            }
+            //Application.Restart();
+
+            string fullPath = Application.ExecutablePath;
+          //  MessageBox.Show(fullPath);
+           
             string cmdLine = AppDomain.CurrentDomain.SetupInformation.ActivationArguments.ActivationData[0];
-       //     MessageBox.Show(cmdLine);
+           // MessageBox.Show(cmdLine);
 
             HandelUserInput h = new HandelUserInput();
             //    foreach (string s in args)
