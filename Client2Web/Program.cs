@@ -19,6 +19,7 @@ namespace Client2Web
     {
         static void Main(string[] args)
         {
+            MessageBox.Show("Please debug me, because Im crashing");
 
 
             ApplicationDeployment updateCheck = ApplicationDeployment.CurrentDeployment;
@@ -31,56 +32,83 @@ namespace Client2Web
                 MessageBox.Show("En ny version fanns tillgänglig och din applikation har nu uppdaterats");
                 return;
             }
-            //Application.Restart();
+            ////Application.Restart();
 
             string fullPath = Application.ExecutablePath;
-          //  MessageBox.Show(fullPath);
-           
-            string cmdLine = AppDomain.CurrentDomain.SetupInformation.ActivationArguments.ActivationData[0];
-           // MessageBox.Show(cmdLine);
+            //  MessageBox.Show(fullPath);
+
+            // string cmdLine = AppDomain.CurrentDomain.SetupInformation.ActivationArguments.ActivationData[0];
+            // MessageBox.Show(cmdLine);
+
+            var cmdLine = "";
+
+
+            var aa = AppDomain.CurrentDomain.SetupInformation.ActivationArguments.ActivationData;
+            if (aa != null && aa.Length > 0)
+            {
+                cmdLine = aa[0];
+            }
+
+
+
 
             HandelUserInput h = new HandelUserInput();
-            //    foreach (string s in args)
 
-            //  {
             if (cmdLine == "client2web:01&")
-            {
-                h.respondToUserInput01();
-            }
-            else if (cmdLine == "client2web:02&")
-            {
-                h.respondToUserInput02();
-            }
-            else if (cmdLine == "client2web:03&")
-            {
-                h.respondToUserInput03();
-            }
-            else if (cmdLine == "client2web:04&")
-            {
-                h.respondToUserInput04();
-            }
-            else if (cmdLine == "client2web:05&")
-            {
-                h.getAssemblyVersion();
-            }
-            else if (cmdLine == "client2web:06&")
-            {
-                h.goToApp();
+                {
+                    h.respondToUserInput01();
+                }
+                else if (cmdLine == "client2web:02&")
+                {
+                    h.respondToUserInput02();
+                }
+                else if (cmdLine == "client2web:03&")
+                {
+                    h.respondToUserInput03();
+                }
+                else if (cmdLine == "client2web:04&")
+                {
+                    h.respondToUserInput04();
+                }
+                else if (cmdLine == "client2web:05&")
+                {
+                    h.getAssemblyVersion();
+                }
+                else if (cmdLine == "client2web:06&")
+                {
+                    h.goToApp();
+                }
+            //    else if (cmdLine == "client2web:07&")
+            //{
+            //    ApplicationDeployment updateCheck2 = ApplicationDeployment.CurrentDeployment;
+            //    UpdateCheckInfo info2 = updateCheck.CheckForDetailedUpdate();
+
+            //    if (info.UpdateAvailable)
+            //    {
+
+            //        updateCheck2.Update();
+            //        MessageBox.Show("En ny version fanns tillgänglig och din applikation har nu uppdaterats");
+            //        return;
+            //    }
             }
 
         //}
 
+      
 
-    }
+
+
         //w2cservice.w2cService objservice = new w2cservice.w2cService();
 
         //string word = "true";
-        //word = objservice.Hello(word);
+        //objservice 
 
         //      Web2ClientServiceReferences.w2cServiceSoapClient client = new Web2ClientServiceReferences.w2cServiceSoapClient();
-        //      client.HelloWorld()
+        //client.HelloWorld()
+    }
+   
 
 
     }
-}
+//  }
 
