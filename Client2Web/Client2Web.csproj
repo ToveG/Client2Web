@@ -27,7 +27,7 @@
     <PublisherName>Formpipe AB</PublisherName>
     <MinimumRequiredVersion>1.0.0.116</MinimumRequiredVersion>
     <TrustUrlParameters>true</TrustUrlParameters>
-    <ApplicationRevision>167</ApplicationRevision>
+    <ApplicationRevision>169</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>

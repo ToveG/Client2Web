@@ -16,11 +16,21 @@ namespace Client2WebInstaller
         static void Main(string[] args)
         {
 
+
+
+            //ProcessStartInfo info = new ProcessStartInfo(@"Bineries\RegistryKeySettings.exe");
+            //info.UseShellExecute = true;
+            //info.Verb = "runas";
+            //Process.Start(info);
+
+
+
+
             RegKeyHandler regKey = new RegKeyHandler();
-            myAppPath appPath = new myAppPath();
+            //      myAppPath appPath = new myAppPath();
 
             string fullPath = Application.ExecutablePath;
-
+   //         MessageBox.Show(fullPath);
             regKey.createNewRegistryKey(fullPath);
             regKey.disableProtocolPrompt();
 
