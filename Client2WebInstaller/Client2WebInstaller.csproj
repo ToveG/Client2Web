@@ -27,7 +27,7 @@
     <ProductName>PCFPassthrough</ProductName>
     <PublisherName>Formpipe AB</PublisherName>
     <MinimumRequiredVersion>1.0.0.25</MinimumRequiredVersion>
-    <ApplicationRevision>84</ApplicationRevision>
+    <ApplicationRevision>103</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -132,12 +132,12 @@
   <ItemGroup>
     <PublishFile Include="Binaries\setup.exe">
       <Visible>False</Visible>
-      <PublishState>DataFile</PublishState>
-      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
+      <PublishState>DataFile</PublishState>
+      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
   </ItemGroup>
