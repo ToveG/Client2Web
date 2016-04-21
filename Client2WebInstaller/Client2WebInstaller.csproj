@@ -27,7 +27,7 @@
     <ProductName>PCFPassthrough</ProductName>
     <PublisherName>Formpipe AB</PublisherName>
     <MinimumRequiredVersion>1.0.0.25</MinimumRequiredVersion>
-    <ApplicationRevision>135</ApplicationRevision>
+    <ApplicationRevision>141</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -93,7 +93,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="RegKeyHandler.cs" />
-    <Compile Include="Web References\w2cService2\Reference.cs">
+    <Compile Include="Web References\w2c_service\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
@@ -108,11 +108,11 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Web References\w2cService2\Reference.map">
+    <None Include="Web References\w2c_service\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Web References\w2cService2\w2cService.wsdl" />
+    <None Include="Web References\w2c_service\w2cService.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
@@ -154,7 +154,7 @@
   <ItemGroup>
     <Content Include="Binaries\RegistryKeySettings.exe" />
     <Content Include="Binaries\setup.exe" />
-    <None Include="Web References\w2cService2\w2cService.disco" />
+    <None Include="Web References\w2c_service\w2cService.disco" />
   </ItemGroup>
   <ItemGroup>
     <WebReferences Include="Web References\" />
@@ -162,14 +162,14 @@
   <ItemGroup>
     <WebReferenceUrl Include="http://localhost/w2cService/w2cService.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
-      <RelPath>Web References\w2cService2\</RelPath>
+      <RelPath>Web References\w2c_service\</RelPath>
       <UpdateFromURL>http://localhost/w2cService/w2cService.asmx</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>
       </CachedDynamicPropName>
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
-      <CachedSettingsPropName>Client2WebInstaller_w2cService2_w2cService</CachedSettingsPropName>
+      <CachedSettingsPropName>Client2WebInstaller_w2c_service_w2cService</CachedSettingsPropName>
     </WebReferenceUrl>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

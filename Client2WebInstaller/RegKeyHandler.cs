@@ -73,10 +73,7 @@ namespace Client2WebInstaller
                 RegistryKey OpenKey = ShellKey.CreateSubKey("Open");
                 RegistryKey CommandKey = OpenKey.CreateSubKey("Command");
                 //RegistryKey mainKey = createKey("client2web");
-                //RegistryKey IconKey = mainKey.CreateSubKey("DefaultIcon");
-                //RegistryKey ShellKey = mainKey.CreateSubKey("Shell");
-                //RegistryKey OpenKey = ShellKey.CreateSubKey("Open");
-                //RegistryKey CommandKey = OpenKey.CreateSubKey("Command");
+     
 
                 openKey(client, "client2web");
                 addStringValueToKey(client, "", "URL: client2web Protocol");
@@ -90,19 +87,6 @@ namespace Client2WebInstaller
                 openKey(CommandKey, "client2web\\Shell\\Open\\Command");
                 addStringValueToKey(CommandKey, "", "\"" + path + "\" \"" + "%1\"");
 
-                //                openKey(mainKey, "client2web");
-                //addStringValueToKey(mainKey, "", "URL: client2web Protocol");
-                //addStringValueToKey(mainKey, "URL Protocol", "");
-                //openKey(IconKey, "client2web\\DefaultIcon");
-                //addStringValueToKey(IconKey, "", "Client2Web.exe.deploy,1");
-                //openKey(ShellKey, "client2web\\Shell");
-                //addStringValueToKey(ShellKey, "", "open");
-                //openKey(OpenKey, "client2web\\Shell\\Open");
-                //addStringValueToKey(OpenKey, "", "");
-                //openKey(CommandKey, "client2web\\Shell\\Open\\Command");
-                //addStringValueToKey(CommandKey, "", "\"" + path + "\" \"" + "%1\"");
-
-                //mainKey.Close();
                 client.Close();
                 IconKey.Close();
                 ShellKey.Close();
@@ -111,12 +95,12 @@ namespace Client2WebInstaller
             }
             else { setCommandValue(path); }
         }
-        public RegistryKey createKey(string keyValue)
-        {
-            RegistryKey keyName = Registry.ClassesRoot.CreateSubKey(keyValue);
+        //public RegistryKey createKey(string keyValue)
+        //{
+        //    RegistryKey keyName = Registry.ClassesRoot.CreateSubKey(keyValue);
 
-            return keyName;
-        }
+        //    return keyName;
+        //}
 
 
         public void addDWORDValueToKey(RegistryKey keyName, string value1, int value2)

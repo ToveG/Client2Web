@@ -16,23 +16,18 @@ namespace Client2WebInstaller
         static void Main(string[] args)
         {
 
-
-
-            //ProcessStartInfo info = new ProcessStartInfo(@"Bineries\RegistryKeySettings.exe");
-            //info.UseShellExecute = true;
-            //info.Verb = "runas";
-            //Process.Start(info);
-
-
-
-
             RegKeyHandler regKey = new RegKeyHandler();
-            //      myAppPath appPath = new myAppPath();
+//            myAppPath appPath = new myAppPath();
+           
 
             string fullPath = Application.ExecutablePath;
-   //         MessageBox.Show(fullPath);
             regKey.createNewRegistryKey(fullPath);
             regKey.disableProtocolPrompt();
+
+            //w2c_service.w2cService service = new w2c_service.w2cService();
+            //string application_status = "true";
+            //service.AddWord(application_status);
+
 
             string shortcutName = string.Concat(Environment.GetFolderPath(Environment.SpecialFolder.Programs), "\\", "Formpipe AB", "\\", "PCF", ".appref-ms");
             if (File.Exists(shortcutName))
@@ -47,7 +42,7 @@ namespace Client2WebInstaller
             }
             else
             {
-              
+
                 fullPath = Path.Combine(ApplicationDeployment.CurrentDeployment.DataDirectory, "Binaries", "setup.exe");
 
                 Process.Start(fullPath);

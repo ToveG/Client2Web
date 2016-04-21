@@ -19,33 +19,27 @@ namespace Client2Web
     {
         static void Main(string[] args)
         {
-    
+
             ApplicationDeployment updateCheck = ApplicationDeployment.CurrentDeployment;
             UpdateCheckInfo info = updateCheck.CheckForDetailedUpdate();
 
             if (info.UpdateAvailable)
             {
-
                 updateCheck.Update();
                 MessageBox.Show("En ny version fanns tillgänglig och din applikation har nu uppdaterats");
                 return;
             }
-       
+
 
             string fullPath = Application.ExecutablePath;
-               
 
             var cmdLine = "";
-
 
             var aa = AppDomain.CurrentDomain.SetupInformation.ActivationArguments.ActivationData;
             if (aa != null && aa.Length > 0)
             {
                 cmdLine = aa[0];
             }
-
-
-
 
             HandelUserInput h = new HandelUserInput();
 
@@ -73,11 +67,7 @@ namespace Client2Web
                 {
                     h.goToApp();
                 }
-  
     }
-   
-
-
     }
- }
+}
 

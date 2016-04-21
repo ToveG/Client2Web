@@ -2,7 +2,7 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Client2WebInstaller.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="Client2WebInstaller_w2cService2_w2cService" Type="(Web Service URL)" Scope="Application">
+    <Setting Name="Client2WebInstaller_w2c_service_w2cService" Type="(Web Service URL)" Scope="Application">
       <Value Profile="(Default)">http://localhost/w2cService/w2cService.asmx</Value>
     </Setting>
   </Settings>

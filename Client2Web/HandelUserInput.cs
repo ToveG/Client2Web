@@ -17,7 +17,7 @@ namespace Client2Web
 
         public void respondToUserInput01()
         {
-        MessageBox.Show("Nr1");
+        MessageBox.Show("My number 1");
         }
         public void respondToUserInput02()
         {
