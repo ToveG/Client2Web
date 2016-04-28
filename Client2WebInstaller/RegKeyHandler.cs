@@ -23,7 +23,7 @@ namespace Client2WebInstaller
 
         public bool doRegKeyExist()
         {
-            //regKeyName = @"HKEY_CLASSES_ROOT\client2web";
+       
             regKeyName = @"HKEY_CURRENT_USER\Software\Classes\client2web";
             regKeyValueName = "URL Protocol";
             if (Registry.GetValue(regKeyName, regKeyValueName, null) == null)

@@ -12,6 +12,16 @@
       <s:element name="AddWordResponse">
         <s:complexType />
       </s:element>
+      <s:element name="getValue">
+        <s:complexType />
+      </s:element>
+      <s:element name="getValueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="getValueResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="AddWordSoapIn">
@@ -20,16 +30,35 @@
   <wsdl:message name="AddWordSoapOut">
     <wsdl:part name="parameters" element="tns:AddWordResponse" />
   </wsdl:message>
+  <wsdl:message name="getValueSoapIn">
+    <wsdl:part name="parameters" element="tns:getValue" />
+  </wsdl:message>
+  <wsdl:message name="getValueSoapOut">
+    <wsdl:part name="parameters" element="tns:getValueResponse" />
+  </wsdl:message>
   <wsdl:portType name="w2cServiceSoap">
     <wsdl:operation name="AddWord">
       <wsdl:input message="tns:AddWordSoapIn" />
       <wsdl:output message="tns:AddWordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getValue">
+      <wsdl:input message="tns:getValueSoapIn" />
+      <wsdl:output message="tns:getValueSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="w2cServiceSoap" type="tns:w2cServiceSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="AddWord">
       <soap:operation soapAction="http://tempuri.org/AddWord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getValue">
+      <soap:operation soapAction="http://tempuri.org/getValue" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -49,13 +78,22 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="getValue">
+      <soap12:operation soapAction="http://tempuri.org/getValue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="w2cService">
     <wsdl:port name="w2cServiceSoap" binding="tns:w2cServiceSoap">
-      <soap:address location="http://localhost/w2cService/w2cService.asmx" />
+      <soap:address location="http://192.168.178.128/Web2Client/w2cService.asmx" />
     </wsdl:port>
     <wsdl:port name="w2cServiceSoap12" binding="tns:w2cServiceSoap12">
-      <soap12:address location="http://localhost/w2cService/w2cService.asmx" />
+      <soap12:address location="http://192.168.178.128/Web2Client/w2cService.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

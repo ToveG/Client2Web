@@ -31,7 +31,7 @@ namespace Client2Web
             }
 
 
-            string fullPath = Application.ExecutablePath;
+     //       string fullPath = Application.ExecutablePath;
 
             var cmdLine = "";
 

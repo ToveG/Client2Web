@@ -17,19 +17,19 @@ namespace Client2Web
 
         public void respondToUserInput01()
         {
-        MessageBox.Show("My number 1");
+        MessageBox.Show("Knapp 1!");
         }
         public void respondToUserInput02()
         {
-            MessageBox.Show("Button nr 2");
+            MessageBox.Show("Knapp 2");
         }
         public void respondToUserInput03()
         {
-            MessageBox.Show("3!");
+            MessageBox.Show("Knapp 3.");
         }
         public void respondToUserInput04()
         {
-            MessageBox.Show("Number 4 it is");
+            MessageBox.Show("Knapp 4.");
         }
 
         public void getAssemblyVersion()

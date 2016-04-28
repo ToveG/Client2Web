@@ -26,7 +26,7 @@ namespace Client2WebInstaller.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost/w2cService/w2cService.asmx")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://192.168.178.128/Web2Client/w2cService.asmx")]
         public string Client2WebInstaller_w2c_service_w2cService {
             get {
                 return ((string)(this["Client2WebInstaller_w2c_service_w2cService"]));

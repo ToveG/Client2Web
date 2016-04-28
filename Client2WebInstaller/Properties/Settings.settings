@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="Client2WebInstaller_w2c_service_w2cService" Type="(Web Service URL)" Scope="Application">
-      <Value Profile="(Default)">http://localhost/w2cService/w2cService.asmx</Value>
+      <Value Profile="(Default)">http://192.168.178.128/Web2Client/w2cService.asmx</Value>
     </Setting>
   </Settings>
 </SettingsFile>

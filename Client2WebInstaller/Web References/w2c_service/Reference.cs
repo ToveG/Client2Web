@@ -31,6 +31,8 @@ namespace Client2WebInstaller.w2c_service {
         
         private System.Threading.SendOrPostCallback AddWordOperationCompleted;
         
+        private System.Threading.SendOrPostCallback getValueOperationCompleted;
+        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
@@ -73,6 +75,9 @@ namespace Client2WebInstaller.w2c_service {
         public event AddWordCompletedEventHandler AddWordCompleted;
         
         /// <remarks/>
+        public event getValueCompletedEventHandler getValueCompleted;
+        
+        /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/AddWord", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         public void AddWord(string word) {
             this.Invoke("AddWord", new object[] {
@@ -101,6 +106,33 @@ namespace Client2WebInstaller.w2c_service {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/getValue", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public bool getValue() {
+            object[] results = this.Invoke("getValue", new object[0]);
+            return ((bool)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getValueAsync() {
+            this.getValueAsync(null);
+        }
+        
+        /// <remarks/>
+        public void getValueAsync(object userState) {
+            if ((this.getValueOperationCompleted == null)) {
+                this.getValueOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetValueOperationCompleted);
+            }
+            this.InvokeAsync("getValue", new object[0], this.getValueOperationCompleted, userState);
+        }
+        
+        private void OngetValueOperationCompleted(object arg) {
+            if ((this.getValueCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getValueCompleted(this, new getValueCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         public new void CancelAsync(object userState) {
             base.CancelAsync(userState);
         }
@@ -122,6 +154,32 @@ namespace Client2WebInstaller.w2c_service {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     public delegate void AddWordCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void getValueCompletedEventHandler(object sender, getValueCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getValueCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal getValueCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
 }
 
 #pragma warning restore 1591
