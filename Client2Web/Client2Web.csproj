@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Client2Web</RootNamespace>
-    <AssemblyName>Client2Web</AssemblyName>
+    <AssemblyName>PCF</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -28,7 +28,7 @@
     <PublisherName>Formpipe AB</PublisherName>
     <MinimumRequiredVersion>1.0.0.116</MinimumRequiredVersion>
     <TrustUrlParameters>true</TrustUrlParameters>
-    <ApplicationRevision>175</ApplicationRevision>
+    <ApplicationRevision>203</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -98,7 +98,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="Web References\w2cservice\Reference.cs">
+    <Compile Include="Web References\w2c_service\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
@@ -113,11 +113,11 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Web References\w2cservice\Reference.map">
+    <None Include="Web References\w2c_service\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Web References\w2cservice\w2cService.wsdl" />
+    <None Include="Web References\w2c_service\w2cService.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
@@ -138,20 +138,20 @@
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
-    <WebReferenceUrl Include="http://localhost/w2cService/w2cService.asmx">
+    <WebReferenceUrl Include="http://192.168.178.128/Web2Client/w2cService.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
-      <RelPath>Web References\w2cservice\</RelPath>
-      <UpdateFromURL>http://localhost/w2cService/w2cService.asmx</UpdateFromURL>
+      <RelPath>Web References\w2c_service\</RelPath>
+      <UpdateFromURL>http://192.168.178.128/Web2Client/w2cService.asmx</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>
       </CachedDynamicPropName>
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
-      <CachedSettingsPropName>Client2Web_w2cservice_w2cService</CachedSettingsPropName>
+      <CachedSettingsPropName>PCF_w2c_service_w2cService</CachedSettingsPropName>
     </WebReferenceUrl>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Web References\w2cservice\w2cService.disco" />
+    <None Include="Web References\w2c_service\w2cService.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

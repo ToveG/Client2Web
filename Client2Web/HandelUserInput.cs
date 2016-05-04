@@ -17,7 +17,7 @@ namespace Client2Web
 
         public void respondToUserInput01()
         {
-        MessageBox.Show("Knapp 1!");
+        MessageBox.Show("Knapp 1.");
         }
         public void respondToUserInput02()
         {
@@ -38,10 +38,19 @@ namespace Client2Web
             MessageBox.Show("Du använder version: " + assemblyVersion);
         }
             
-        public void goToApp()
+        public void registrateApplication(string myArguments)
         {
+            string result = myArguments;
+            result = result.Substring(19);
+           
+            char[] MyChar = { '&' };
+            string applicationId = result.TrimEnd(MyChar);
 
+            w2c_service.w2cService service = new w2c_service.w2cService();
+            service.setUserId(applicationId);
         }
+
+
 
     }
     

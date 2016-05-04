@@ -22,9 +22,9 @@ namespace Client2WebInstaller
             regKey.createNewRegistryKey(fullPath);
             regKey.disableProtocolPrompt();
 
-            w2c_service.w2cService service = new w2c_service.w2cService();
-            string application_status = "true";
-            service.AddWord(application_status);
+            //w2c_service.w2cService service = new w2c_service.w2cService();
+            //string application_status = "true";
+            //service.AddWord(application_status);
 
 
             string shortcutName = string.Concat(Environment.GetFolderPath(Environment.SpecialFolder.Programs), "\\", "Formpipe AB", "\\", "Client2Web", ".appref-ms");
@@ -34,9 +34,11 @@ namespace Client2WebInstaller
                 foreach (var arg in args)
                 {
                     arguments += arg + "&";
+              //      MessageBox.Show(arg);
                 }
 
-                Process.Start(shortcutName, arguments);
+              
+              Process.Start(shortcutName, arguments);
             }
             else
             {

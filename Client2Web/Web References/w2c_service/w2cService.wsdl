@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="setUserId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setUserIdResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="getValue">
+        <s:complexType />
+      </s:element>
+      <s:element name="getValueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="getValueResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="boolean" type="s:boolean" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="setUserIdSoapIn">
+    <wsdl:part name="parameters" element="tns:setUserId" />
+  </wsdl:message>
+  <wsdl:message name="setUserIdSoapOut">
+    <wsdl:part name="parameters" element="tns:setUserIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="getValueSoapIn">
+    <wsdl:part name="parameters" element="tns:getValue" />
+  </wsdl:message>
+  <wsdl:message name="getValueSoapOut">
+    <wsdl:part name="parameters" element="tns:getValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="setUserIdHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="setUserIdHttpGetOut" />
+  <wsdl:message name="getValueHttpGetIn" />
+  <wsdl:message name="getValueHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="setUserIdHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="setUserIdHttpPostOut" />
+  <wsdl:message name="getValueHttpPostIn" />
+  <wsdl:message name="getValueHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:portType name="w2cServiceSoap">
+    <wsdl:operation name="setUserId">
+      <wsdl:input message="tns:setUserIdSoapIn" />
+      <wsdl:output message="tns:setUserIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getValue">
+      <wsdl:input message="tns:getValueSoapIn" />
+      <wsdl:output message="tns:getValueSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="w2cServiceHttpGet">
+    <wsdl:operation name="setUserId">
+      <wsdl:input message="tns:setUserIdHttpGetIn" />
+      <wsdl:output message="tns:setUserIdHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getValue">
+      <wsdl:input message="tns:getValueHttpGetIn" />
+      <wsdl:output message="tns:getValueHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="w2cServiceHttpPost">
+    <wsdl:operation name="setUserId">
+      <wsdl:input message="tns:setUserIdHttpPostIn" />
+      <wsdl:output message="tns:setUserIdHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getValue">
+      <wsdl:input message="tns:getValueHttpPostIn" />
+      <wsdl:output message="tns:getValueHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="w2cServiceSoap" type="tns:w2cServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="setUserId">
+      <soap:operation soapAction="http://tempuri.org/setUserId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getValue">
+      <soap:operation soapAction="http://tempuri.org/getValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="w2cServiceSoap12" type="tns:w2cServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="setUserId">
+      <soap12:operation soapAction="http://tempuri.org/setUserId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getValue">
+      <soap12:operation soapAction="http://tempuri.org/getValue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="w2cServiceHttpGet" type="tns:w2cServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="setUserId">
+      <http:operation location="/setUserId" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getValue">
+      <http:operation location="/getValue" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="w2cServiceHttpPost" type="tns:w2cServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="setUserId">
+      <http:operation location="/setUserId" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getValue">
+      <http:operation location="/getValue" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="w2cService">
+    <wsdl:port name="w2cServiceSoap" binding="tns:w2cServiceSoap">
+      <soap:address location="http://192.168.178.128/Web2Client/w2cService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="w2cServiceSoap12" binding="tns:w2cServiceSoap12">
+      <soap12:address location="http://192.168.178.128/Web2Client/w2cService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="w2cServiceHttpGet" binding="tns:w2cServiceHttpGet">
+      <http:address location="http://192.168.178.128/Web2Client/w2cService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="w2cServiceHttpPost" binding="tns:w2cServiceHttpPost">
+      <http:address location="http://192.168.178.128/Web2Client/w2cService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

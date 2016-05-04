@@ -2,8 +2,8 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Client2Web.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="Client2Web_w2cservice_w2cService" Type="(Web Service URL)" Scope="Application">
-      <Value Profile="(Default)">http://localhost/w2cService/w2cService.asmx</Value>
+    <Setting Name="PCF_w2c_service_w2cService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://192.168.178.128/Web2Client/w2cService.asmx</Value>
     </Setting>
   </Settings>
 </SettingsFile>

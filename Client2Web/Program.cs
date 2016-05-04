@@ -13,6 +13,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 
+
 namespace Client2Web
 {
     class Program
@@ -31,43 +32,45 @@ namespace Client2Web
             }
 
 
-     //       string fullPath = Application.ExecutablePath;
-
             var cmdLine = "";
 
-            var aa = AppDomain.CurrentDomain.SetupInformation.ActivationArguments.ActivationData;
-            if (aa != null && aa.Length > 0)
+            var activation_data = AppDomain.CurrentDomain.SetupInformation.ActivationArguments.ActivationData;
+            if (activation_data != null && activation_data.Length > 0)
             {
-                cmdLine = aa[0];
+                cmdLine = activation_data[0];
             }
+
+
+
 
             HandelUserInput h = new HandelUserInput();
 
             if (cmdLine == "client2web:01&")
-                {
-                    h.respondToUserInput01();
-                }
-                else if (cmdLine == "client2web:02&")
-                {
-                    h.respondToUserInput02();
-                }
-                else if (cmdLine == "client2web:03&")
-                {
-                    h.respondToUserInput03();
-                }
-                else if (cmdLine == "client2web:04&")
-                {
-                    h.respondToUserInput04();
-                }
-                else if (cmdLine == "client2web:05&")
-                {
-                    h.getAssemblyVersion();
-                }
-                else if (cmdLine == "client2web:06&")
-                {
-                    h.goToApp();
-                }
-    }
+            {
+                h.respondToUserInput01();
+            }
+            else if (cmdLine == "client2web:02&")
+            {
+                h.respondToUserInput02();
+            }
+            else if (cmdLine == "client2web:03&")
+            {
+                h.respondToUserInput03();
+            }
+            else if (cmdLine == "client2web:04&")
+            {
+                h.respondToUserInput04();
+            }
+            else if (cmdLine == "client2web:05&")
+            {
+                h.getAssemblyVersion();
+            }
+
+            else if (cmdLine.Contains("aliveId"))
+            {
+                h.registrateApplication(cmdLine);
+            }
+        }
     }
 }
 

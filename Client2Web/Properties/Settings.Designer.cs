@@ -22,16 +22,14 @@ namespace Client2Web.Properties {
                 return defaultInstance;
             }
         }
-
-        public string Client2Web_w2cService_w2cService { get; internal set; }
-
+        
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost/w2cService/w2cService.asmx")]
-        public string Client2Web_w2cservice_w2cService {
+        [global::System.Configuration.DefaultSettingValueAttribute("http://192.168.178.128/Web2Client/w2cService.asmx")]
+        public string PCF_w2c_service_w2cService {
             get {
-                return ((string)(this["Client2Web_w2cservice_w2cService"]));
+                return ((string)(this["PCF_w2c_service_w2cService"]));
             }
         }
     }
