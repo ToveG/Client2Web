@@ -9,10 +9,7 @@ namespace Client2Web
 {
     interface IWeb2Client
     {
-        void respondToUserInput01();
-        void respondToUserInput02();
-        void respondToUserInput03();
-        void respondToUserInput04();
+        void downloadFile(string myArgument);
         void getAssemblyVersion();
     }
 }

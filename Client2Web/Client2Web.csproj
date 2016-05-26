@@ -28,7 +28,7 @@
     <PublisherName>Formpipe AB</PublisherName>
     <MinimumRequiredVersion>1.0.0.116</MinimumRequiredVersion>
     <TrustUrlParameters>true</TrustUrlParameters>
-    <ApplicationRevision>203</ApplicationRevision>
+    <ApplicationRevision>241</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -98,6 +98,11 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Web References\DocumentManagementService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
     <Compile Include="Web References\w2c_service\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -112,6 +117,11 @@
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\DocumentManagementService\DocumentManagementService.wsdl" />
+    <None Include="Web References\DocumentManagementService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <None Include="Web References\w2c_service\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
@@ -138,6 +148,17 @@
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
+    <WebReferenceUrl Include="http://192.168.178.128//Web2Client/DocumentManagementService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\DocumentManagementService\</RelPath>
+      <UpdateFromURL>http://192.168.178.128//Web2Client/DocumentManagementService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>PCF_DocumentManagementService_DocumentManagementService</CachedSettingsPropName>
+    </WebReferenceUrl>
     <WebReferenceUrl Include="http://192.168.178.128/Web2Client/w2cService.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\w2c_service\</RelPath>
@@ -152,6 +173,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Web References\w2c_service\w2cService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\DocumentManagementService\DocumentManagementService.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

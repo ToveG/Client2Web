@@ -32,5 +32,15 @@ namespace Client2Web.Properties {
                 return ((string)(this["PCF_w2c_service_w2cService"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://192.168.178.128/Web2Client/DocumentManagementService.asmx")]
+        public string PCF_DocumentManagementService_DocumentManagementService {
+            get {
+                return ((string)(this["PCF_DocumentManagementService_DocumentManagementService"]));
+            }
+        }
     }
 }

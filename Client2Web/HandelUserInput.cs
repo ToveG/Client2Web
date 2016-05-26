@@ -7,29 +7,44 @@ using System.Text;
 using System.Threading.Tasks;
 using static System.Net.Mime.MediaTypeNames;
 using System.Windows.Forms;
-
+using System.IO;
+    
 
 namespace Client2Web
 {
     class HandelUserInput : IWeb2Client
     {
+        w2c_service.w2cService service = new w2c_service.w2cService();
+        DocumentManagementService.DocumentManagementService documentService = new DocumentManagementService.DocumentManagementService();
+ 
         public object ApplicationDeployment { get; private set; }
 
-        public void respondToUserInput01()
+        public string trimString(string stringToTrim)
         {
-        MessageBox.Show("Knapp 1.");
+            string myString = stringToTrim;
+            myString = myString.Substring(19);
+            char[] MyChar = { '&'};
+            string result = myString.TrimEnd(MyChar);
+            return result;
         }
-        public void respondToUserInput02()
+
+        public void downloadFile(string myArgument)
         {
-            MessageBox.Show("Knapp 2");
-        }
-        public void respondToUserInput03()
-        {
-            MessageBox.Show("Knapp 3.");
-        }
-        public void respondToUserInput04()
-        {
-            MessageBox.Show("Knapp 4.");
+            string docName = trimString(myArgument);
+            string fileName = docName.Replace("{", " ");
+
+            string filePath = @"C:\Client2Web\" + fileName;
+
+            MemoryStream objstreaminput = new MemoryStream();
+            FileStream objfilestream = new FileStream(filePath, FileMode.Create, FileAccess.ReadWrite);
+
+            int len = (int)documentService.downloadDocumentLen(filePath.Remove(0, filePath.LastIndexOf("\\") + 1));
+            Byte[] mybytearray = new Byte[len];
+            mybytearray = documentService.downloadDocument(filePath.Remove(0, filePath.LastIndexOf("\\") + 1));
+            objfilestream.Write(mybytearray, 0, len);
+
+            objfilestream.Close();
+        
         }
 
         public void getAssemblyVersion()
@@ -40,19 +55,11 @@ namespace Client2Web
             
         public void registrateApplication(string myArguments)
         {
-            string result = myArguments;
-            result = result.Substring(19);
-           
-            char[] MyChar = { '&' };
-            string applicationId = result.TrimEnd(MyChar);
+            var applicationId = trimString(myArguments);
 
-            w2c_service.w2cService service = new w2c_service.w2cService();
             service.setUserId(applicationId);
         }
-
-
-
-    }
+      }
     
 }
 

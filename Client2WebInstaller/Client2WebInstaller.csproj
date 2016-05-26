@@ -27,7 +27,7 @@
     <ProductName>Client2WebInstaller</ProductName>
     <PublisherName>Formpipe AB</PublisherName>
     <MinimumRequiredVersion>1.0.0.25</MinimumRequiredVersion>
-    <ApplicationRevision>152</ApplicationRevision>
+    <ApplicationRevision>155</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>

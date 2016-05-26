@@ -40,32 +40,16 @@ namespace Client2Web
                 cmdLine = activation_data[0];
             }
 
-
-
-
             HandelUserInput h = new HandelUserInput();
 
-            if (cmdLine == "client2web:01&")
+            if (cmdLine.Contains("download"))
             {
-                h.respondToUserInput01();
-            }
-            else if (cmdLine == "client2web:02&")
-            {
-                h.respondToUserInput02();
-            }
-            else if (cmdLine == "client2web:03&")
-            {
-                h.respondToUserInput03();
-            }
-            else if (cmdLine == "client2web:04&")
-            {
-                h.respondToUserInput04();
+                h.downloadFile(cmdLine);
             }
             else if (cmdLine == "client2web:05&")
             {
                 h.getAssemblyVersion();
             }
-
             else if (cmdLine.Contains("aliveId"))
             {
                 h.registrateApplication(cmdLine);
