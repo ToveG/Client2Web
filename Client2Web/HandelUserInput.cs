@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using static System.Net.Mime.MediaTypeNames;
 using System.Windows.Forms;
 using System.IO;
+
     
 
 namespace Client2Web
@@ -42,17 +43,22 @@ namespace Client2Web
             Byte[] mybytearray = new Byte[len];
             mybytearray = documentService.downloadDocument(filePath.Remove(0, filePath.LastIndexOf("\\") + 1));
             objfilestream.Write(mybytearray, 0, len);
-
             objfilestream.Close();
-        
+
+            const string message = "Vill du ladda ner filen?";
+            const string caption = "Form Closing";
+            var result = MessageBox.Show(message, caption,
+                                         MessageBoxButtons.YesNo,
+                                         MessageBoxIcon.Question);
         }
 
         public void getAssemblyVersion()
         {
           string assemblyVersion = Assembly.GetExecutingAssembly().GetName().Version.ToString();
-            MessageBox.Show("Du använder version: " + assemblyVersion);
+          MessageBox.Show("Du använder version: " + assemblyVersion);
         }
-            
+
+        //set application-id to db via webService    
         public void registrateApplication(string myArguments)
         {
             var applicationId = trimString(myArguments);

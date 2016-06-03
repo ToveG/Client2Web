@@ -20,10 +20,8 @@ namespace Client2WebInstaller
         public bool doItExists { get; set; }
         public RegistryKey keysName { get; set; }
 
-
         public bool doRegKeyExist()
         {
-       
             regKeyName = @"HKEY_CURRENT_USER\Software\Classes\client2web";
             regKeyValueName = "URL Protocol";
             if (Registry.GetValue(regKeyName, regKeyValueName, null) == null)
@@ -55,12 +53,10 @@ namespace Client2WebInstaller
         public string getCommandValue()
         {
             keyName = @"HKEY_CURRENT_USER\Software\Classes\client2web\Shell\Open\Command";
-            //keyName = @"HKEY_CLASSES_ROOT\client2web\Shell\Open\Command";
             valueName = "";
             value = Registry.GetValue(keyName, valueName, null).ToString();
             return value;
         }
-
 
         public void createNewRegistryKey(string path)
         {
@@ -72,8 +68,6 @@ namespace Client2WebInstaller
                 RegistryKey ShellKey = client.CreateSubKey("Shell");
                 RegistryKey OpenKey = ShellKey.CreateSubKey("Open");
                 RegistryKey CommandKey = OpenKey.CreateSubKey("Command");
-                //RegistryKey mainKey = createKey("client2web");
-     
 
                 openKey(client, "client2web");
                 addStringValueToKey(client, "", "URL: client2web Protocol");
@@ -95,13 +89,6 @@ namespace Client2WebInstaller
             }
             else { setCommandValue(path); }
         }
-        //public RegistryKey createKey(string keyValue)
-        //{
-        //    RegistryKey keyName = Registry.ClassesRoot.CreateSubKey(keyValue);
-
-        //    return keyName;
-        //}
-
 
         public void addDWORDValueToKey(RegistryKey keyName, string value1, int value2)
         {
@@ -116,7 +103,6 @@ namespace Client2WebInstaller
         {
             keyName.OpenSubKey(valueOfKey, true);
         }
-
 
         public void disableProtocolPrompt()
         {

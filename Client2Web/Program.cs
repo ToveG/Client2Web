@@ -20,7 +20,7 @@ namespace Client2Web
     {
         static void Main(string[] args)
         {
-
+            // check if there is any updates avalible 
             ApplicationDeployment updateCheck = ApplicationDeployment.CurrentDeployment;
             UpdateCheckInfo info = updateCheck.CheckForDetailedUpdate();
 
@@ -30,7 +30,6 @@ namespace Client2Web
                 MessageBox.Show("En ny version fanns tillgänglig och din applikation har nu uppdaterats");
                 return;
             }
-
 
             var cmdLine = "";
 
